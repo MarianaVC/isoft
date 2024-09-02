@@ -28,7 +28,7 @@ class NotaCredito(models.Model):
 
 
 class NotaCreditoProducto(models.Model):
-    no_cn = models.ForeignKey(NotaCredito, on_delete=models.CASCADE)
+    no_nc = models.ForeignKey(NotaCredito, on_delete=models.CASCADE)
     cve_producto = models.ForeignKey(Producto, on_delete=models.DO_NOTHING)
     qty = models.IntegerField(default=1)
 
