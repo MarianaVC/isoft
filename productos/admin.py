@@ -3,4 +3,10 @@ from .models import Producto
 
 # Register your models here.
 
-admin.site.register(Producto)
+
+class ProductoAdmin(admin.ModelAdmin):
+    list_display = ("descripcion", "cve_producto")
+    search_fields = ("descripcion",)
+
+
+admin.site.register(Producto, ProductoAdmin)
