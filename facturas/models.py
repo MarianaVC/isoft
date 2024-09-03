@@ -11,6 +11,9 @@ class Factura(models.Model):
     cve_vendedor = models.ForeignKey(Vendedor, on_delete=models.DO_NOTHING)
     cve_cliente = models.ForeignKey(Cliente, on_delete=models.DO_NOTHING)
 
+    def __str__(self):
+        return str(self.no_factura)
+
 
 class FacturaProducto(models.Model):
     no_factura = models.ForeignKey(Factura, on_delete=models.CASCADE)
