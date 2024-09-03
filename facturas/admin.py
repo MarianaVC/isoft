@@ -14,13 +14,15 @@ class FacturaProductoAdminInline(admin.TabularInline):
     model = FacturaProducto
     extra = 1
 
+
 class FacturaNotaCreditoInline(admin.TabularInline):
     model = FacturaNotaCredito
     extra = 1
 
+
 class FacturaAdmin(admin.ModelAdmin):
     list_display = ("no_factura", "fecha_factura", "cve_vendedor", "cve_cliente")
-    inlines = [FacturaProductoAdminInline,FacturaNotaCreditoInline]
+    inlines = [FacturaProductoAdminInline, FacturaNotaCreditoInline]
 
 
 class FacturaProductoAdmin(admin.ModelAdmin):

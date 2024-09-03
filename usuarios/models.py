@@ -29,6 +29,12 @@ class Vendedor(Persona):
     )
     cve_zona = models.ForeignKey(Zona, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.nombre + " " + self.paterno + " " + self.materno
+
 
 class Cliente(Persona):
     cve_cliente = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+
+    def __str__(self):
+        return self.nombre + " " + self.paterno + " " + self.materno
