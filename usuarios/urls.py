@@ -7,5 +7,8 @@ router = routers.DefaultRouter()
 
 urlpatterns = [
     path("", views.VendedorListAPIView.as_view(), name="vendedor"),
+    path("indicadores/", views.AllIndicadoresListAPIView.as_view(), name="indicadores"),
+    path("<pk>/", views.IndicadoresListAPIView.as_view()),
+
 ]
 urlpatterns += router.urls
